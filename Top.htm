@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<script type="text/vbscript">
+  Sub Button1_onclick        
+
+  Select Case Select1.selectedIndex
+
+    Case 0	' Use Automation.
+      Dim sHTML
+      sHTML = window.parent.frames("bottom").document.forms(0).children("DataGrid1").outerhtml
+      Dim oXL, oBook
+      Set oXL = CreateObject("Excel.Application")
+      Set oBook = oXL.Workbooks.Add
+      oBook.HTMLProject.HTMLProjectItems("Sheet1").Text = sHTML
+      oBook.HTMLProject.RefreshDocument
+      oXL.Visible = true
+      oXL.UserControl = true
+
+    Case 1	' Use MIME Type (In a New Window).
+      window.open("bottom.aspx?bExcel=1")
+
+    Case 2	' Use MIME Type (In the Frame).
+      window.parent.frames("bottom").navigate "bottom.aspx?bExcel=1"
+  End Select	
+End Sub
+</script>
+<body>
+Export to Excel Using:
+<select id="Select1" size="1" name="Select1">
+<option value="0" selected>Automation</option>
+<option value="1">MIME Type (In a New Window)</option>
+<option value="2">MIME Type (In the Frame)</option>
+</select>
+<input id="Button1" type="button" value="Go!" name="Button1" />
+</body>
+</html>
