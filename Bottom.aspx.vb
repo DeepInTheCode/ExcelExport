@@ -3,7 +3,11 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ' Create a connection and open it.
-        Dim objConn As New System.Data.OleDb.OleDbConnection("provider=microsoft.jet.oledb.4.0; data source=~\Northwind.mdb;")
+        Dim rootWebConfig As System.Configuration.Configuration
+        rootWebConfig = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("/")
+        Dim connString As System.Configuration.ConnectionStringSettings
+        connString = rootWebConfig.ConnectionStrings.ConnectionStrings("dbConnection")
+        Dim objConn As New System.Data.OleDb.OleDbConnection(connString.ToString)
         objConn.Open()
 
         Dim strSQL As String

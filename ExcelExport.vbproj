@@ -82,8 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bottom.aspx" />
-    <Content Include="Frameset.htm" />
-    <Content Include="Northwind.mdb" />
+    <Content Include="Default.aspx" />
+    <Content Include="Export.htm" />
+    <Content Include="App_Data\Northwind.mdb" />
+    <Content Include="Global.asax" />
+    <Content Include="Import.aspx" />
     <Content Include="Top.htm" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,6 +96,23 @@
     </Compile>
     <Compile Include="Bottom.aspx.vb">
       <DependentUpon>Bottom.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Import.aspx.designer.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Import.aspx.vb">
+      <DependentUpon>Import.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -140,6 +160,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -165,7 +188,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49754</DevelopmentServerPort>
+          <DevelopmentServerPort>9393</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

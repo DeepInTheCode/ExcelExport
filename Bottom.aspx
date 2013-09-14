@@ -9,6 +9,7 @@
     <body>
         <form id="form1" runat="server">
             <div>
+                <a href="Bottom.aspx">Bottom.aspx</a>
                 <asp:datagrid id="DataGrid1" runat="server" GridLines="Vertical" CellPadding="3" BackColor="White"
             BorderColor="#999999" BorderWidth="1px" BorderStyle="None" Width="100%" Height="100%" Font-Size="X-Small"
             Font-Names="Verdana">
